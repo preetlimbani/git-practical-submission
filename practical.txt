@@ -1,0 +1,39 @@
+1. Pull and Merge difference
+- Make example of pull request and two branch merge event.
+-> To Create Pull Request
+	i) On GitHub.com, navigate to the main page of the repository.
+	ii)In the "Branch" menu, choose the branch that contains your commits.
+	iii)Above the list of files, click Pull request.
+	iv)Use the base branch dropdown menu to select the branch you'd like to merge your changes into, then use the compare branch drop-down menu to choose the topic branch you made your changes in.
+	v) Last step is to click on create pull request button to createpull request.
+-> To merge
+	i) Open pull request you wants to merge
+	ii)and there you can see button with name "Merge pull request"	
+
+
+2. Rebase
+- Try to rebase feature branch with master branch 
+-> git rebase feature
+
+
+3. Change commit message
+- Commit push on commit in feature branch and then change commit message
+->To commit , writing message and push that commit in feature branch in remote repository.
+	git checkout feature (to change branch)
+	git commit -m "file created" (to commit and add message)
+	git push origin feature (to push file to remote repository)
+->to change last commit's message
+	git commit --amend -m "New message added"
+
+
+4. cherry pick
+- Pick some commits from feature branch to master branch
+-> coppied hash from commit of feature branch and now to cherry pick to master we will use command mention below
+	git cherry-pick 6ec2786
+
+
+5. Drop commit
+- Remove some commit from feature branch.
+-> To remove commit
+	git reset --hard f19b1a4
+	 
