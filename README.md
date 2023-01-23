@@ -1,1 +1,1 @@
-Created this repository for git practical submission
+Created this branch for java-script practical submission
