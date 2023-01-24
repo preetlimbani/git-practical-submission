@@ -1,1 +1,1 @@
-Created this repository for git practical submission
+Created this repository practical submission
