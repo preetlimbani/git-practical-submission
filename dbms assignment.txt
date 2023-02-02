@@ -1,0 +1,34 @@
+Q1. Write a query to fetch the number of employees working in the department ‘Admin’.
+-->SELECT COUNT(*) FROM EmployeeInfo WHERE Department = 'Admin';
+
+Q2. Write a query to retrieve the first four characters of  EmpLname from the EmployeeInfo table.
+-->SELECT SUBSTRING(EmpLname, 1, 4) FROM EmployeeInfo;
+
+Q3. Write q query to find all the employees whose salary is between 50000 to 100000.
+-->SELECT * FROM EmployeePosition WHERE Salary BETWEEN '50000' AND '100000';
+
+Q4. Write a query to find the names of employees that begin with ‘S’
+-->SELECT * FROM EmployeeInfo WHERE EmpFname LIKE 'S%';
+
+Q5. Write a query to fetch top N records order by salary. (ex. top 5 records)
+-->SELECT * FROM EmployeePosition ORDER BY Salary DESC LIMIT 4;
+
+Q6. Write a query to fetch details of all employees excluding the employees with first names, “Sanjay” and “Sonia” from the EmployeeInfo table.
+-->SELECT * FROM EmployeeInfo WHERE EmpFname NOT IN ('Sanjay','Sonia');
+
+Q7.Write a query to fetch the department-wise count of employees sorted by department’s count in ascending order.
+-->SELECT Department, count(EmpID) AS DeptCount FROM EmployeeInfo GROUP BY Department ORDER BY DeptCount;
+
+Q8.Create indexing for any particular field and show the difference in data fetching before and after indexing.
+-->Before adding Index:-
+	EXPLAIN select EmpId from EmployeeInfo WHERE EmpID = 5;
+	output:- Seq Scan on employeeinfo  (cost=0.00..1.06 rows=1 width=4)
+	
+   For adding Index:-
+   	CREATE INDEX ind_EmpID ON EmployeeInfo(EmpID);
+   
+   After adding Index :-
+   	EXPLAIN select EmpId from EmployeeInfo WHERE EmpID = 5;
+   	output:-Seq Scan on employeeinfo  (cost=0.00..1.06 rows=1 width=4)
+   
+   Even after adding index on EmpID it still prefers sequential scan because the query optimizer thinks that it is more optimal to just scan the whole table to locate the row.
